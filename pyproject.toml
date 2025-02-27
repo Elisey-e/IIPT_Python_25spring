@@ -1,19 +1,21 @@
-[build-system]
-requires = ["setuptools>=42", "wheel"]
-build-backend = "setuptools.build_meta"
-
 [project]
-name = "iitp_spring"
+name = "iitphw"
 version = "0.1.0"
-description = "seminars"
+description = ""
 authors = [
-    { name="Elisey", email="ez1071@yandex.ru" }
+    {name = "Your Name",email = "you@example.com"}
 ]
+readme = "README.md"
+requires-python = ">=3.11"
 dependencies = [
-    "numpy==2.0.4",
-    "torch==2.1.6"
+    "numpy (>=2.2.3,<3.0.0)",
+    "scipy (>=1.15.2,<2.0.0)"
 ]
 
-[project.urls]
-Homepage = "discord.ru"
-Repository = "https://github.com/Elisey-e/IIPT_Python_25spring"
+[tool.poetry]
+packages = [{include = "iitphw", from = "src"}]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
