@@ -22,7 +22,7 @@ pillow==11.1.0
 pyparsing==3.2.1
 python-dateutil==2.9.0.post0
 PyYAML==6.0.2
-RealESRGAN @ file:///C:/Users/Elisey/Documents/GitHub/IIPT_Python_25spring/Real-ESRGAN-main
+RealESRGAN @ git+https://github.com/sberbank-ai/Real-ESRGAN.git
 requests==2.32.3
 scipy==1.9.3
 six==1.17.0
