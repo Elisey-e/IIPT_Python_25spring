@@ -16,4 +16,4 @@ bash run.sh
 
 Пример вывода
 
-![alt text](https://sun9-51.userapi.com/impg/eFjY9Aow9bXD-MtuqW6mXj_oZX4AGVQJ_f2kag/tKN2BPinh2c.jpg?size=1400x700&quality=95&sign=49c0a5e0a7b8931274ee7c2222f36198&type=album)
+![alt text](https://sun9-42.userapi.com/impg/V4C16fI6WiLlIUe_f4NeBox44qA_70mNi9rceg/YlIBnjFEMUI.jpg?size=1400x700&quality=95&sign=fd6cb478dadda401087057ae503eebaf&type=album)

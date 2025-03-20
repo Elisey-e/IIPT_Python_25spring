@@ -59,7 +59,7 @@ for i, (filename, values) in enumerate(images):
     axs[0, 3].set_title('RealESRGAN')
 
 
-    axs[1, 0].imshow(np.clip(gt_image, 0, 1), extent=(0, 1, 0, 1), origin='lower')
+    axs[1, 0].imshow(gt_image, extent=(0, 1, 0, 1), origin='lower')
     axs[1, 0].set_title('Ground Truth')
 
     # Карты разности
