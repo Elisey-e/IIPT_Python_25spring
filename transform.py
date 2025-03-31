@@ -4,7 +4,7 @@ from PIL import Image
 
 resize_scale = 2 # Константа для выбранных моделей resize
 
-def crop_and_resize(image_path, output_path, size=(100, 100)):
+def crop_and_resize(image_path, output_path, size=(100, 100)) -> None:
     """Вырезает квадратную часть изображения и изменяет размер до 100x100."""
     with Image.open(image_path) as img:
         width, height = img.size
@@ -19,7 +19,7 @@ def crop_and_resize(image_path, output_path, size=(100, 100)):
         output_path = os.path.splitext(output_path)[0] + '.png'
         img_resized.save(output_path, 'PNG')
 
-def process_images(input_dir, output_dir, size):
+def process_images(input_dir : str, output_dir : str, size : tuple) -> None:
     """Проходит по всем изображениям в директории и обрабатывает их."""
     if not os.path.exists(output_dir):
         os.makedirs(output_dir)

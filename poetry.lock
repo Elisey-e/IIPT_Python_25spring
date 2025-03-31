@@ -499,6 +499,14 @@ socks = ["PySocks (>=1.5.6,!=1.5.7)"]
 use-chardet-on-py3 = ["chardet (>=3.0.2,<6)"]
 
 [[package]]
+name = "ruff"
+version = "0.11.2"
+description = "An extremely fast Python linter and code formatter, written in Rust."
+category = "main"
+optional = false
+python-versions = ">=3.7"
+
+[[package]]
 name = "scipy"
 version = "1.9.3"
 description = "Fundamental algorithms for scientific computing in Python"
@@ -659,7 +667,7 @@ zstd = ["zstandard (>=0.18.0)"]
 [metadata]
 lock-version = "1.1"
 python-versions = ">=3.10"  # Версия Python указывается здесь, а не в requires-python
-content-hash = "3576a663ffec95eae020368de1f2660cece0cc0178c3f981be868422b3aba4e0"
+content-hash = "3f751a8f6c1ab9211ca7c8123ac24a75aeb7c943122fc3bc614fba723c6e0fb5"
 
 [metadata.files]
 certifi = []
@@ -701,6 +709,7 @@ python-dateutil = []
 pyyaml = []
 RealESRGAN = []
 requests = []
+ruff = []
 scipy = []
 six = []
 super-image = []

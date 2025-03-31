@@ -43,7 +43,47 @@ tqdm = "==4.67.1"
 typing-extensions = "==4.12.2"
 urllib3 = "==2.3.0"
 RealESRGAN = {git = "https://github.com/sberbank-ai/Real-ESRGAN.git", branch = "main"}
+ruff = "^0.11.2"
 
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.ruff]
+# Базовые настройки
+line-length = 120
+target-version = "py310"
+select = [
+    # Основные группы правил
+    "E",   # Ошибки (Pyflakes)
+    "F",   # Контроль стиля (pycodestyle)
+    "I",   # Сортировка импортов (isort)
+    "B",   # Баги (flake8-bugbear)
+    "C4",  # Сложность кода (mccabe)
+    "UP",  # Модернизация кода (pyupgrade)
+    "YTT", # Проверка типов в шаблонах
+    "ANN", # Аннотации типов
+    "S",   # Безопасность (bandit)
+    "T20", # Медленные тесты (flake8-testing)
+]
+
+# Дополнительные необязательные правила (можно отключить)
+ignore = [
+    "ANN101",  # Типы для self в методах
+    "D",       # Документация (pydocstyle) - часто отключают
+    "PL",      # Pylint-правила (слишком строгие)
+    "ERA001",  # Комментарии с лишними символами
+]
+fixable = ["ALL"]
+
+[tool.ruff.isort]
+known-first-party = ["imgvisint"]  # Укажите имя вашего пакета
+
+[tool.ruff.flake8-quotes]
+inline-quotes = "single"
+multiline-quotes = "double"
+docstring-quotes = "double"
+
+[tool.ruff.per-file-ignores]
+# Игнорирование конкретных файлов
+"tests/*" = ["ANN", "S"]
