@@ -1,5 +1,8 @@
 import os
+import argparse
 from PIL import Image
+
+resize_scale = 2 # Константа для выбранных моделей resize
 
 def crop_and_resize(image_path, output_path, size=(100, 100)):
     """Вырезает квадратную часть изображения и изменяет размер до 100x100."""
@@ -28,9 +31,13 @@ def process_images(input_dir, output_dir, size):
             crop_and_resize(input_path, output_path, size=size)
 
 if __name__ == "__main__":
-    input_directory = 'images'
-    output_directory = 'processed_images'
-    process_images(input_directory, output_directory, size=(100, 100))
-
-    output_directory = 'processed_images_gt'
-    process_images(input_directory, output_directory, size=(200, 200))
+    parser = argparse.ArgumentParser(description='Обработка изображений: обрезка и изменение размера')
+    parser.add_argument('--size', type=int, nargs=2, default=[100, 100],
+                        help='Размер выходного изображения (ширина высота), например: 100 100')
+    parser.add_argument('--input', type=str, default='images',
+                        help='Входная директория с изображениями (по умолчанию: images)')
+    
+    args = parser.parse_args()
+    
+    process_images(args.input, 'processed_images', tuple(args.size))
+    process_images(args.input, 'processed_images_gt', (args.size[0] * 2, args.size[1] * 2))
