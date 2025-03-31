@@ -1,2 +1,3 @@
-python3 transform.py --size 100 100 --input images
-python3 interpolation.py
+poetry install
+poetry run python transform.py --size 100 100 --input images
+poetry run python interpolation.py
