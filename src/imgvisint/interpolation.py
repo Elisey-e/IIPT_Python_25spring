@@ -1,10 +1,16 @@
 import os
+import sys
+
+current_dir = os.path.dirname(os.path.abspath(__file__))
+parent_parent_dir = os.path.abspath(os.path.join(current_dir, '../..'))
+if parent_parent_dir not in sys.path:
+    sys.path.append(parent_parent_dir)
+
+import models
 
 import matplotlib.pyplot as plt
 import numpy as np
 from PIL import Image
-
-import models
 
 
 def load_images_from_folder(folder : str) -> list:
