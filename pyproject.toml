@@ -44,10 +44,22 @@ typing-extensions = "==4.12.2"
 urllib3 = "==2.3.0"
 RealESRGAN = {git = "https://github.com/sberbank-ai/Real-ESRGAN.git", branch = "main"}
 ruff = "^0.11.2"
+pytest = "^8.3.5"
+
+include = [
+    "models/__init__.py"
+]
+pytest-cov = "^6.1.0"
+
 
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.pytest.ini_options]
+filterwarnings = [
+    "ignore::FutureWarning"
+]
 
 [tool.ruff]
 # Базовые настройки
@@ -71,6 +83,7 @@ lint.ignore = [
     "PL",      # Pylint-правила (слишком строгие)
     "ERA001",  # Комментарии с лишними символами
     "F401",    # Названия импортов должны отличаться для перегруженных классов
+    "S101",    # Ассерты в тестах
 ]
 lint.fixable = ["ALL"]
 

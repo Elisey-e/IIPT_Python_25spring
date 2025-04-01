@@ -41,6 +41,20 @@ test = ["contourpy", "matplotlib", "pillow"]
 test-no-images = ["pytest", "pytest-cov", "pytest-rerunfailures", "pytest-xdist", "wurlitzer"]
 
 [[package]]
+name = "coverage"
+version = "7.8.0"
+description = "Code coverage measurement for Python"
+category = "main"
+optional = false
+python-versions = ">=3.9"
+
+[package.dependencies]
+tomli = {version = "*", optional = true, markers = "python_full_version <= \"3.11.0a6\" and extra == \"toml\""}
+
+[package.extras]
+toml = ["tomli"]
+
+[[package]]
 name = "cycler"
 version = "0.12.1"
 description = "Composable style cycles"
@@ -51,6 +65,17 @@ python-versions = ">=3.8"
 [package.extras]
 docs = ["ipython", "matplotlib", "numpydoc", "sphinx"]
 tests = ["pytest", "pytest-cov", "pytest-xdist"]
+
+[[package]]
+name = "exceptiongroup"
+version = "1.2.2"
+description = "Backport of PEP 654 (exception groups)"
+category = "main"
+optional = false
+python-versions = ">=3.7"
+
+[package.extras]
+test = ["pytest (>=6)"]
 
 [[package]]
 name = "filelock"
@@ -175,6 +200,22 @@ python-versions = ">=3.6"
 
 [package.extras]
 all = ["ruff (>=0.6.2)", "mypy (>=1.11.2)", "pytest (>=8.3.2)", "flake8 (>=7.1.1)"]
+
+[[package]]
+name = "include"
+version = "0.2.2"
+description = "Dynamic import from files and other sources"
+category = "main"
+optional = false
+python-versions = "*"
+
+[[package]]
+name = "iniconfig"
+version = "2.1.0"
+description = "brain-dead simple config-ini parsing"
+category = "main"
+optional = false
+python-versions = ">=3.8"
 
 [[package]]
 name = "jinja2"
@@ -427,6 +468,18 @@ typing = ["typing-extensions"]
 xmp = ["defusedxml"]
 
 [[package]]
+name = "pluggy"
+version = "1.5.0"
+description = "plugin and hook calling mechanisms for python"
+category = "main"
+optional = false
+python-versions = ">=3.8"
+
+[package.extras]
+dev = ["pre-commit", "tox"]
+testing = ["pytest", "pytest-benchmark"]
+
+[[package]]
 name = "pyparsing"
 version = "3.2.1"
 description = "pyparsing module - Classes and methods to define and execute parsing grammars"
@@ -436,6 +489,40 @@ python-versions = ">=3.9"
 
 [package.extras]
 diagrams = ["railroad-diagrams", "jinja2"]
+
+[[package]]
+name = "pytest"
+version = "8.3.5"
+description = "pytest: simple powerful testing with Python"
+category = "main"
+optional = false
+python-versions = ">=3.8"
+
+[package.dependencies]
+colorama = {version = "*", markers = "sys_platform == \"win32\""}
+exceptiongroup = {version = ">=1.0.0rc8", markers = "python_version < \"3.11\""}
+iniconfig = "*"
+packaging = "*"
+pluggy = ">=1.5,<2"
+tomli = {version = ">=1", markers = "python_version < \"3.11\""}
+
+[package.extras]
+dev = ["argcomplete", "attrs (>=19.2)", "hypothesis (>=3.56)", "mock", "pygments (>=2.7.2)", "requests", "setuptools", "xmlschema"]
+
+[[package]]
+name = "pytest-cov"
+version = "6.1.0"
+description = "Pytest plugin for measuring coverage."
+category = "main"
+optional = false
+python-versions = ">=3.9"
+
+[package.dependencies]
+coverage = {version = ">=7.5", extras = ["toml"]}
+pytest = ">=4.6"
+
+[package.extras]
+testing = ["fields", "hunter", "process-tests", "pytest-xdist", "virtualenv"]
 
 [[package]]
 name = "python-dateutil"
@@ -561,6 +648,14 @@ mpmath = ">=1.1.0,<1.4"
 dev = ["pytest (>=7.1.0)", "hypothesis (>=6.70.0)"]
 
 [[package]]
+name = "tomli"
+version = "2.2.1"
+description = "A lil' TOML parser"
+category = "main"
+optional = false
+python-versions = ">=3.8"
+
+[[package]]
 name = "torch"
 version = "2.6.0"
 description = "Tensors and Dynamic neural networks in Python with strong GPU acceleration"
@@ -667,20 +762,24 @@ zstd = ["zstandard (>=0.18.0)"]
 [metadata]
 lock-version = "1.1"
 python-versions = ">=3.10"  # Версия Python указывается здесь, а не в requires-python
-content-hash = "3f751a8f6c1ab9211ca7c8123ac24a75aeb7c943122fc3bc614fba723c6e0fb5"
+content-hash = "204bce8694952931bbddce3f472083b757983b73fbcd282556e584695a2ce625"
 
 [metadata.files]
 certifi = []
 charset-normalizer = []
 colorama = []
 contourpy = []
+coverage = []
 cycler = []
+exceptiongroup = []
 filelock = []
 fonttools = []
 fsspec = []
 h5py = []
 huggingface-hub = []
 idna = []
+include = []
+iniconfig = []
 jinja2 = []
 kiwisolver = []
 markupsafe = []
@@ -704,7 +803,10 @@ nvidia-nvtx-cu12 = []
 opencv-python = []
 packaging = []
 pillow = []
+pluggy = []
 pyparsing = []
+pytest = []
+pytest-cov = []
 python-dateutil = []
 pyyaml = []
 RealESRGAN = []
@@ -714,6 +816,7 @@ scipy = []
 six = []
 super-image = []
 sympy = []
+tomli = []
 torch = []
 torchvision = []
 tqdm = []
