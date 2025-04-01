@@ -2,12 +2,16 @@
 name = "imgvisint"
 version = "0.1.0"
 description = "Image Upscale/Interpolation visualisation"
-authors = ["Zhdanov E.A. <your_email@example.com>"]  # Добавьте email в формате "Name <email>"
+authors = ["Zhdanov E.A. <example@example.ru>"]
 license = "Apache-2.0"
 readme = "README.md"
 
+packages = [
+    { include = "imgvisint", from = "src" }
+]
+
 [tool.poetry.dependencies]
-python = ">=3.10"  # Версия Python указывается здесь, а не в requires-python
+python = "==3.11"  # Версия Python указывается здесь, а не в requires-python
 certifi = "==2025.1.31"
 charset-normalizer = "==3.4.1"
 colorama = "==0.4.6"
@@ -46,10 +50,10 @@ RealESRGAN = {git = "https://github.com/sberbank-ai/Real-ESRGAN.git", branch = "
 ruff = "^0.11.2"
 pytest = "^8.3.5"
 
-include = [
-    "models/__init__.py"
-]
+# include = [    "models/__init__.py"]
 pytest-cov = "^6.1.0"
+nox = "^2025.2.9"
+nox-poetry = "^1.2.0"
 
 
 [build-system]

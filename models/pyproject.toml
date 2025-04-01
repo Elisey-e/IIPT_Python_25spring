@@ -1,0 +1,13 @@
+[tool.poetry]
+name = "models"
+version = "0.1.0"
+description = "Local models package"
+authors = ["Zhdanov E.A. <your_email@example.com>"]  # Добавьте email в формате "Name <email>"
+license = "Apache-2.0"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
