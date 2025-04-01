@@ -9,3 +9,5 @@ weights
 Real-ESRGAN-main
 IIPT_Python_25spring
 .coverage
+.ruff_cache
+.pytest_cache
