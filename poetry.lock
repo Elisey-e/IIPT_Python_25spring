@@ -1,4 +1,12 @@
 [[package]]
+name = "alabaster"
+version = "1.0.0"
+description = "A light, configurable Sphinx theme"
+category = "main"
+optional = false
+python-versions = ">=3.10"
+
+[[package]]
 name = "argcomplete"
 version = "3.6.1"
 description = "Bash tab completion for argparse"
@@ -8,6 +16,14 @@ python-versions = ">=3.8"
 
 [package.extras]
 test = ["coverage", "mypy", "pexpect", "ruff", "wheel"]
+
+[[package]]
+name = "astroid"
+version = "3.3.9"
+description = "An abstract syntax tree for Python with inference support."
+category = "main"
+optional = false
+python-versions = ">=3.9.0"
 
 [[package]]
 name = "attrs"
@@ -24,6 +40,17 @@ dev = ["cloudpickle", "hypothesis", "mypy (>=1.11.1)", "pre-commit-uv", "pympler
 docs = ["cogapp", "furo", "myst-parser", "sphinx", "sphinx-notfound-page", "sphinxcontrib-towncrier", "towncrier"]
 tests = ["cloudpickle", "hypothesis", "mypy (>=1.11.1)", "pympler", "pytest-mypy-plugins", "pytest-xdist", "pytest (>=4.3.0)"]
 tests-mypy = ["mypy (>=1.11.1)", "pytest-mypy-plugins"]
+
+[[package]]
+name = "babel"
+version = "2.17.0"
+description = "Internationalization utilities"
+category = "main"
+optional = false
+python-versions = ">=3.8"
+
+[package.extras]
+dev = ["tzdata", "backports.zoneinfo", "freezegun (>=1.0,<2.0)", "jinja2 (>=3.0)", "pytest-cov", "pytest (>=6.0)", "pytz", "setuptools"]
 
 [[package]]
 name = "build"
@@ -60,6 +87,17 @@ description = "The Real First Universal Charset Detector. Open, modern and activ
 category = "main"
 optional = false
 python-versions = ">=3.7"
+
+[[package]]
+name = "click"
+version = "8.1.8"
+description = "Composable command line interface toolkit"
+category = "main"
+optional = false
+python-versions = ">=3.7"
+
+[package.dependencies]
+colorama = {version = "*", markers = "platform_system == \"Windows\""}
 
 [[package]]
 name = "colorama"
@@ -145,6 +183,14 @@ description = "Distribution utilities"
 category = "main"
 optional = false
 python-versions = "*"
+
+[[package]]
+name = "docutils"
+version = "0.21.2"
+description = "Docutils -- Python Documentation Utilities"
+category = "main"
+optional = false
+python-versions = ">=3.9"
 
 [[package]]
 name = "filelock"
@@ -271,6 +317,14 @@ python-versions = ">=3.6"
 all = ["ruff (>=0.6.2)", "mypy (>=1.11.2)", "pytest (>=8.3.2)", "flake8 (>=7.1.1)"]
 
 [[package]]
+name = "imagesize"
+version = "1.4.1"
+description = "Getting image size from png/jpeg/jpeg2000/gif file"
+category = "main"
+optional = false
+python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
+
+[[package]]
 name = "iniconfig"
 version = "2.1.0"
 description = "brain-dead simple config-ini parsing"
@@ -299,6 +353,27 @@ description = "A fast implementation of the Cassowary constraint solver"
 category = "main"
 optional = false
 python-versions = ">=3.10"
+
+[[package]]
+name = "markdown-it-py"
+version = "3.0.0"
+description = "Python port of markdown-it. Markdown parsing, done right!"
+category = "main"
+optional = false
+python-versions = ">=3.8"
+
+[package.dependencies]
+mdurl = ">=0.1,<1.0"
+
+[package.extras]
+benchmarking = ["psutil", "pytest", "pytest-benchmark"]
+code_style = ["pre-commit (>=3.0,<4.0)"]
+compare = ["commonmark (>=0.9,<1.0)", "markdown (>=3.4,<4.0)", "mistletoe (>=1.0,<2.0)", "mistune (>=2.0,<3.0)", "panflute (>=2.3,<3.0)"]
+linkify = ["linkify-it-py (>=1,<3)"]
+plugins = ["mdit-py-plugins"]
+profiling = ["gprof2dot"]
+rtd = ["mdit-py-plugins", "myst-parser", "pyyaml", "sphinx", "sphinx-copybutton", "sphinx-design", "sphinx-book-theme", "jupyter-sphinx"]
+testing = ["coverage", "pytest", "pytest-cov", "pytest-regressions"]
 
 [[package]]
 name = "markupsafe"
@@ -331,6 +406,30 @@ python-dateutil = ">=2.7"
 dev = ["meson-python (>=0.13.1,<0.17.0)", "pybind11 (>=2.13.2,!=2.13.3)", "setuptools_scm (>=7)", "setuptools (>=64)"]
 
 [[package]]
+name = "mdit-py-plugins"
+version = "0.4.2"
+description = "Collection of plugins for markdown-it-py"
+category = "main"
+optional = false
+python-versions = ">=3.8"
+
+[package.dependencies]
+markdown-it-py = ">=1.0.0,<4.0.0"
+
+[package.extras]
+code-style = ["pre-commit"]
+rtd = ["myst-parser", "sphinx-book-theme"]
+testing = ["coverage", "pytest", "pytest-cov", "pytest-regressions"]
+
+[[package]]
+name = "mdurl"
+version = "0.1.2"
+description = "Markdown URL utilities"
+category = "main"
+optional = false
+python-versions = ">=3.7"
+
+[[package]]
 name = "mpmath"
 version = "1.3.0"
 description = "Python library for arbitrary-precision floating-point arithmetic"
@@ -343,6 +442,29 @@ develop = ["pytest (>=4.6)", "pycodestyle", "pytest-cov", "codecov", "wheel"]
 docs = ["sphinx"]
 gmpy = ["gmpy2 (>=2.1.0a4)"]
 tests = ["pytest (>=4.6)"]
+
+[[package]]
+name = "myst-parser"
+version = "4.0.1"
+description = "An extended [CommonMark](https://spec.commonmark.org/) compliant parser,"
+category = "main"
+optional = false
+python-versions = ">=3.10"
+
+[package.dependencies]
+docutils = ">=0.19,<0.22"
+jinja2 = "*"
+markdown-it-py = ">=3.0,<4.0"
+mdit-py-plugins = ">=0.4.1,<1.0"
+pyyaml = "*"
+sphinx = ">=7,<9"
+
+[package.extras]
+code-style = ["pre-commit (>=4.0,<5.0)"]
+linkify = ["linkify-it-py (>=2.0,<3.0)"]
+rtd = ["sphinx (>=7)", "ipython", "sphinx-book-theme (>=1.1,<2.0)", "sphinx-design", "sphinx-copybutton", "sphinxext-rediraffe (>=0.2.7,<0.3.0)", "sphinxext-opengraph (>=0.9.0,<0.10.0)", "sphinx-pyscript", "sphinx-tippy (>=0.4.3)", "sphinx-autodoc2 (>=0.5.0,<0.6.0)", "sphinx-togglebutton"]
+testing = ["beautifulsoup4", "coverage", "defusedxml", "pytest (>=8,<9)", "pytest-cov", "pytest-regressions", "pytest-param-files (>=0.6.0,<0.7.0)", "sphinx-pytest", "pygments (<2.19)"]
+testing-docutils = ["pygments", "pytest (>=8,<9)", "pytest-param-files (>=0.6.0,<0.7.0)"]
 
 [[package]]
 name = "networkx"
@@ -589,6 +711,17 @@ dev = ["pre-commit", "tox"]
 testing = ["pytest", "pytest-benchmark"]
 
 [[package]]
+name = "pygments"
+version = "2.19.1"
+description = "Pygments is a syntax highlighting package written in Python."
+category = "main"
+optional = false
+python-versions = ">=3.8"
+
+[package.extras]
+windows-terminal = ["colorama (>=0.4.6)"]
+
+[[package]]
 name = "pyparsing"
 version = "3.2.1"
 description = "pyparsing module - Classes and methods to define and execute parsing grammars"
@@ -701,6 +834,18 @@ socks = ["PySocks (>=1.5.6,!=1.5.7)"]
 use-chardet-on-py3 = ["chardet (>=3.0.2,<6)"]
 
 [[package]]
+name = "roman-numerals-py"
+version = "3.1.0"
+description = "Manipulate well-formed Roman numerals"
+category = "main"
+optional = false
+python-versions = ">=3.9"
+
+[package.extras]
+lint = ["mypy (==1.15.0)", "ruff (==0.9.7)", "pyright (==1.1.394)"]
+test = ["pytest (>=8)"]
+
+[[package]]
 name = "ruff"
 version = "0.11.2"
 description = "An extremely fast Python linter and code formatter, written in Rust."
@@ -731,6 +876,180 @@ description = "Python 2 and 3 compatibility utilities"
 category = "main"
 optional = false
 python-versions = "!=3.0.*,!=3.1.*,!=3.2.*,>=2.7"
+
+[[package]]
+name = "snowballstemmer"
+version = "2.2.0"
+description = "This package provides 29 stemmers for 28 languages generated from Snowball algorithms."
+category = "main"
+optional = false
+python-versions = "*"
+
+[[package]]
+name = "sphinx"
+version = "8.3.0"
+description = "Python documentation generator"
+category = "main"
+optional = false
+python-versions = ">=3.11"
+
+[package.dependencies]
+alabaster = ">=0.7.14"
+babel = ">=2.13"
+colorama = {version = ">=0.4.6", markers = "sys_platform == \"win32\""}
+docutils = ">=0.20,<0.22"
+imagesize = ">=1.3"
+Jinja2 = ">=3.1"
+packaging = ">=23.0"
+Pygments = ">=2.17"
+requests = ">=2.30.0"
+roman-numerals-py = ">=1.0.0"
+snowballstemmer = ">=2.2"
+sphinxcontrib-applehelp = ">=1.0.7"
+sphinxcontrib-devhelp = ">=1.0.6"
+sphinxcontrib-htmlhelp = ">=2.0.6"
+sphinxcontrib-jsmath = ">=1.0.1"
+sphinxcontrib-qthelp = ">=1.0.6"
+sphinxcontrib-serializinghtml = ">=1.1.9"
+
+[package.extras]
+docs = ["sphinxcontrib-websupport"]
+lint = ["ruff (==0.9.9)", "mypy (==1.15.0)", "sphinx-lint (>=0.9)", "types-colorama (==0.4.15.20240311)", "types-defusedxml (==0.7.0.20240218)", "types-docutils (==0.21.0.20241128)", "types-Pillow (==10.2.0.20240822)", "types-Pygments (==2.19.0.20250219)", "types-requests (==2.32.0.20241016)", "types-urllib3 (==1.26.25.14)", "pyright (==1.1.395)", "pytest (>=8.0)", "pypi-attestations (==0.0.21)", "betterproto (==2.0.0b6)"]
+test = ["pytest (>=8.0)", "pytest-xdist[psutil] (>=3.4)", "defusedxml (>=0.7.1)", "cython (>=3.0)", "setuptools (>=70.0)", "typing_extensions (>=4.9)"]
+
+[[package]]
+name = "sphinx-autodoc2"
+version = "0.5.0"
+description = "Analyse a python project and create documentation for it."
+category = "main"
+optional = false
+python-versions = ">=3.8"
+
+[package.dependencies]
+astroid = ">=2.7,<4"
+typing-extensions = "*"
+
+[package.extras]
+cli = ["typer"]
+docs = ["sphinx (>=4.0.0)", "furo", "myst-parser"]
+sphinx = ["sphinx (>=4.0.0)"]
+testing = ["pytest", "pytest-regressions", "pytest-cov", "sphinx (>=4.0.0,<7)"]
+
+[[package]]
+name = "sphinx-click"
+version = "6.0.0"
+description = "Sphinx extension that automatically documents click applications"
+category = "main"
+optional = false
+python-versions = ">=3.8"
+
+[package.dependencies]
+click = ">=8.0"
+docutils = "*"
+sphinx = ">=4.0"
+
+[[package]]
+name = "sphinx-rtd-theme"
+version = "3.0.2"
+description = "Read the Docs theme for Sphinx"
+category = "main"
+optional = false
+python-versions = ">=3.8"
+
+[package.dependencies]
+docutils = ">0.18,<0.22"
+sphinx = ">=6,<9"
+sphinxcontrib-jquery = ">=4,<5"
+
+[package.extras]
+dev = ["transifex-client", "bump2version", "wheel", "twine"]
+
+[[package]]
+name = "sphinxcontrib-applehelp"
+version = "2.0.0"
+description = "sphinxcontrib-applehelp is a Sphinx extension which outputs Apple help books"
+category = "main"
+optional = false
+python-versions = ">=3.9"
+
+[package.extras]
+lint = ["ruff (==0.5.5)", "mypy", "types-docutils"]
+standalone = ["Sphinx (>=5)"]
+test = ["pytest"]
+
+[[package]]
+name = "sphinxcontrib-devhelp"
+version = "2.0.0"
+description = "sphinxcontrib-devhelp is a sphinx extension which outputs Devhelp documents"
+category = "main"
+optional = false
+python-versions = ">=3.9"
+
+[package.extras]
+lint = ["ruff (==0.5.5)", "mypy", "types-docutils"]
+standalone = ["Sphinx (>=5)"]
+test = ["pytest"]
+
+[[package]]
+name = "sphinxcontrib-htmlhelp"
+version = "2.1.0"
+description = "sphinxcontrib-htmlhelp is a sphinx extension which renders HTML help files"
+category = "main"
+optional = false
+python-versions = ">=3.9"
+
+[package.extras]
+lint = ["ruff (==0.5.5)", "mypy", "types-docutils"]
+standalone = ["Sphinx (>=5)"]
+test = ["pytest", "html5lib"]
+
+[[package]]
+name = "sphinxcontrib-jquery"
+version = "4.1"
+description = "Extension to include jQuery on newer Sphinx releases"
+category = "main"
+optional = false
+python-versions = ">=2.7"
+
+[package.dependencies]
+Sphinx = ">=1.8"
+
+[[package]]
+name = "sphinxcontrib-jsmath"
+version = "1.0.1"
+description = "A sphinx extension which renders display math in HTML via JavaScript"
+category = "main"
+optional = false
+python-versions = ">=3.5"
+
+[package.extras]
+test = ["pytest", "flake8", "mypy"]
+
+[[package]]
+name = "sphinxcontrib-qthelp"
+version = "2.0.0"
+description = "sphinxcontrib-qthelp is a sphinx extension which outputs QtHelp documents"
+category = "main"
+optional = false
+python-versions = ">=3.9"
+
+[package.extras]
+lint = ["ruff (==0.5.5)", "mypy", "types-docutils"]
+standalone = ["Sphinx (>=5)"]
+test = ["pytest", "defusedxml (>=0.7.1)"]
+
+[[package]]
+name = "sphinxcontrib-serializinghtml"
+version = "2.0.0"
+description = "sphinxcontrib-serializinghtml is a sphinx extension which outputs \"serialized\" HTML files (json and pickle)"
+category = "main"
+optional = false
+python-versions = ">=3.9"
+
+[package.extras]
+lint = ["ruff (==0.5.5)", "mypy", "types-docutils"]
+standalone = ["Sphinx (>=5)"]
+test = ["pytest"]
 
 [[package]]
 name = "super-image"
@@ -894,14 +1213,18 @@ test = ["covdefaults (>=2.3)", "coverage-enable-subprocess (>=1)", "coverage (>=
 [metadata]
 lock-version = "1.1"
 python-versions = "==3.11"  # Версия Python указывается здесь, а не в requires-python
-content-hash = "1336721fc361171eb4db2626925d3abd6f5562abeb330c832de0c4c182fd8b36"
+content-hash = "9abfdade09ba7d3feae248494e64111063dc717581721e3c1fef7ca3960f333b"
 
 [metadata.files]
+alabaster = []
 argcomplete = []
+astroid = []
 attrs = []
+babel = []
 build = []
 certifi = []
 charset-normalizer = []
+click = []
 colorama = []
 colorlog = []
 contourpy = []
@@ -909,18 +1232,24 @@ coverage = []
 cycler = []
 dependency-groups = []
 distlib = []
+docutils = []
 filelock = []
 fonttools = []
 fsspec = []
 h5py = []
 huggingface-hub = []
 idna = []
+imagesize = []
 iniconfig = []
 jinja2 = []
 kiwisolver = []
+markdown-it-py = []
 markupsafe = []
 matplotlib = []
+mdit-py-plugins = []
+mdurl = []
 mpmath = []
+myst-parser = []
 networkx = []
 nox = []
 nox-poetry = []
@@ -943,6 +1272,7 @@ packaging = []
 pillow = []
 platformdirs = []
 pluggy = []
+pygments = []
 pyparsing = []
 pyproject-hooks = []
 pytest = []
@@ -951,9 +1281,22 @@ python-dateutil = []
 pyyaml = []
 RealESRGAN = []
 requests = []
+roman-numerals-py = []
 ruff = []
 scipy = []
 six = []
+snowballstemmer = []
+sphinx = []
+sphinx-autodoc2 = []
+sphinx-click = []
+sphinx-rtd-theme = []
+sphinxcontrib-applehelp = []
+sphinxcontrib-devhelp = []
+sphinxcontrib-htmlhelp = []
+sphinxcontrib-jquery = []
+sphinxcontrib-jsmath = []
+sphinxcontrib-qthelp = []
+sphinxcontrib-serializinghtml = []
 super-image = []
 sympy = []
 tomlkit = []
