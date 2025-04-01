@@ -1,7 +1,8 @@
-import pytest
-import models
 import numpy as np
+import pytest
 from PIL import Image
+
+import models
 
 """
 Замечание: присутствуют статистические оценки, средняя срабатываемость тестов около 2 sigma 
@@ -33,7 +34,6 @@ def test_gan_noise(sz : int) -> None:
     
 
     res = models.esrgan_interpolation(original_image)
-    print(np.mean(res))
     assert 128 - 128 ** 0.5 < abs(np.mean(res)) < 128 + 128 ** 0.5
 
 

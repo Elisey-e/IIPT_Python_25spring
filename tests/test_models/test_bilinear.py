@@ -1,7 +1,7 @@
-import pytest
-import models
 import numpy as np
+import pytest
 
+import models
 
 
 @pytest.mark.parametrize("sz", [
