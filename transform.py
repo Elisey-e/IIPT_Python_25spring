@@ -1,10 +1,11 @@
-import os
 import argparse
+import os
+
 from PIL import Image
 
 resize_scale = 2 # Константа для выбранных моделей resize
 
-def crop_and_resize(image_path, output_path, size=(100, 100)) -> None:
+def crop_and_resize(image_path :str, output_path : str, size : tuple = (100, 100)) -> None:
     """Вырезает квадратную часть изображения и изменяет размер до 100x100."""
     with Image.open(image_path) as img:
         width, height = img.size

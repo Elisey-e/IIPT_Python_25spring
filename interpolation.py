@@ -1,12 +1,13 @@
-import numpy as np
-import scipy.interpolate as interp
-import matplotlib.pyplot as plt
 import os
+
+import matplotlib.pyplot as plt
+import numpy as np
 from PIL import Image
 
 import models
 
-def load_images_from_folder(folder):
+
+def load_images_from_folder(folder : str) -> list:
     images = []
     for filename in os.listdir(folder):
         if filename.endswith(".png"):
