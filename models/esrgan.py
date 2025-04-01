@@ -8,7 +8,7 @@ model = RealESRGAN(device, scale=2)
 model.load_weights("weights/RealESRGAN_x2.pth", download=True)
 
 
-def neural_network_upscale(image: Image) -> np.array:
+def neural_network_upscale(image: "Image") -> np.ndarray:
     """Upscale image using RealESRGAN model."""
     sr_image = model.predict(image)
     return np.array(sr_image)
