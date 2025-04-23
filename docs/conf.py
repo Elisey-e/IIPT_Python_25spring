@@ -9,6 +9,7 @@ extensions = [
 ]
 
 html_theme = 'furo'
+html_logo = "source/_static/m31.png"
 
 autodoc2_packages = [
     "../myproject",
