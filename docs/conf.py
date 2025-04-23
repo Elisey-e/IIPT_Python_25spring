@@ -12,7 +12,7 @@ html_theme = 'furo'
 html_logo = "source/_static/m31.png"
 
 autodoc2_packages = [
-    "../myproject",
+    "../models",
 ]
 
 myst_enable_extensions = [
@@ -24,3 +24,6 @@ myst_enable_extensions = [
 source_suffix = {
     '.md': 'markdown',
 }
+
+autodoc2_render_plugin = "myst"
+autosummary_generate = True
