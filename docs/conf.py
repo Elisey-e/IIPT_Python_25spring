@@ -8,7 +8,7 @@ extensions = [
     'matplotlib.sphinxext.plot_directive'
 ]
 
-html_theme = 'sphinx_rtd_theme'
+html_theme = 'furo'
 
 autodoc2_packages = [
     "../myproject",

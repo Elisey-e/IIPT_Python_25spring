@@ -8,7 +8,7 @@ python-versions = ">=3.10"
 
 [[package]]
 name = "argcomplete"
-version = "3.6.1"
+version = "3.6.2"
 description = "Bash tab completion for argparse"
 category = "main"
 optional = false
@@ -51,6 +51,25 @@ python-versions = ">=3.8"
 
 [package.extras]
 dev = ["tzdata", "backports.zoneinfo", "freezegun (>=1.0,<2.0)", "jinja2 (>=3.0)", "pytest-cov", "pytest (>=6.0)", "pytz", "setuptools"]
+
+[[package]]
+name = "beautifulsoup4"
+version = "4.13.4"
+description = "Screen-scraping library"
+category = "main"
+optional = false
+python-versions = ">=3.7.0"
+
+[package.dependencies]
+soupsieve = ">1.2"
+typing-extensions = ">=4.0.0"
+
+[package.extras]
+cchardet = ["cchardet"]
+chardet = ["chardet"]
+charset-normalizer = ["charset-normalizer"]
+html5lib = ["html5lib"]
+lxml = ["lxml"]
 
 [[package]]
 name = "build"
@@ -262,6 +281,20 @@ test = ["aiohttp (!=4.0.0a0,!=4.0.0a1)", "numpy", "pytest", "pytest-asyncio (!=0
 test-downstream = ["aiobotocore (>=2.5.4,<3.0.0)", "dask", "moto[server] (>4,<5)", "pytest-timeout", "xarray"]
 test-full = ["adlfs", "aiohttp (!=4.0.0a0,!=4.0.0a1)", "cloudpickle", "dask", "distributed", "dropbox", "dropboxdrivefs", "fastparquet", "fusepy", "gcsfs", "jinja2", "kerchunk", "libarchive-c", "lz4", "notebook", "numpy", "ocifs", "pandas", "panel", "paramiko", "pyarrow", "pyarrow (>=1)", "pyftpdlib", "pygit2", "pytest", "pytest-asyncio (!=0.22.0)", "pytest-benchmark", "pytest-cov", "pytest-mock", "pytest-recording", "pytest-rerunfailures", "python-snappy", "requests", "smbprotocol", "tqdm", "urllib3", "zarr", "zstandard"]
 tqdm = ["tqdm"]
+
+[[package]]
+name = "furo"
+version = "2024.8.6"
+description = "A clean customisable Sphinx documentation theme."
+category = "main"
+optional = false
+python-versions = ">=3.8"
+
+[package.dependencies]
+beautifulsoup4 = "*"
+pygments = ">=2.7"
+sphinx = ">=6.0,<9.0"
+sphinx-basic-ng = ">=1.0.0.beta2"
 
 [[package]]
 name = "h5py"
@@ -767,7 +800,7 @@ dev = ["argcomplete", "attrs (>=19.2)", "hypothesis (>=3.56)", "mock", "pygments
 
 [[package]]
 name = "pytest-cov"
-version = "6.1.0"
+version = "6.1.1"
 description = "Pytest plugin for measuring coverage."
 category = "main"
 optional = false
@@ -855,7 +888,7 @@ test = ["pytest (>=8)"]
 
 [[package]]
 name = "ruff"
-version = "0.11.2"
+version = "0.11.6"
 description = "An extremely fast Python linter and code formatter, written in Rust."
 category = "main"
 optional = false
@@ -903,6 +936,14 @@ description = "This package provides 29 stemmers for 28 languages generated from
 category = "main"
 optional = false
 python-versions = "*"
+
+[[package]]
+name = "soupsieve"
+version = "2.7"
+description = "A modern CSS selector implementation for Beautiful Soup."
+category = "main"
+optional = false
+python-versions = ">=3.8"
 
 [[package]]
 name = "sphinx"
@@ -953,6 +994,20 @@ cli = ["typer"]
 docs = ["sphinx (>=4.0.0)", "furo", "myst-parser"]
 sphinx = ["sphinx (>=4.0.0)"]
 testing = ["pytest", "pytest-regressions", "pytest-cov", "sphinx (>=4.0.0,<7)"]
+
+[[package]]
+name = "sphinx-basic-ng"
+version = "1.0.0b2"
+description = "A modern skeleton for Sphinx themes."
+category = "main"
+optional = false
+python-versions = ">=3.7"
+
+[package.dependencies]
+sphinx = ">=4.0"
+
+[package.extras]
+docs = ["furo", "myst-parser", "sphinx-copybutton", "sphinx-inline-tabs", "ipython"]
 
 [[package]]
 name = "sphinx-click"
@@ -1240,7 +1295,7 @@ test = ["covdefaults (>=2.3)", "coverage-enable-subprocess (>=1)", "coverage (>=
 [metadata]
 lock-version = "1.1"
 python-versions = "==3.11"  # Версия Python указывается здесь, а не в requires-python
-content-hash = "35dab9ac4076b2f296e802bdea9eeabe21ec755548a17a2ecbce0be4e374fb67"
+content-hash = "a54e1213aa82090c6abe9f7921890a164e46bd8f931ed0cf9c64db9c7373438f"
 
 [metadata.files]
 alabaster = []
@@ -1248,6 +1303,7 @@ argcomplete = []
 astroid = []
 attrs = []
 babel = []
+beautifulsoup4 = []
 build = []
 certifi = []
 charset-normalizer = []
@@ -1263,6 +1319,7 @@ docutils = []
 filelock = []
 fonttools = []
 fsspec = []
+furo = []
 h5py = []
 huggingface-hub = []
 idna = []
@@ -1315,8 +1372,10 @@ scipy = []
 six = []
 snakeviz = []
 snowballstemmer = []
+soupsieve = []
 sphinx = []
 sphinx-autodoc2 = []
+sphinx-basic-ng = []
 sphinx-click = []
 sphinx-rtd-theme = []
 sphinxcontrib-applehelp = []

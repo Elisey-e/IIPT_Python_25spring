@@ -97,6 +97,7 @@ def linter(session: Session) -> None:
 #     session.install("xdoctest")
 #     session.run("python", "-m", "xdoctest", package, *args)
 
+
 @nox_poetry.session(python="3.11")
 def coverage(session: Session) -> None:
     """Upload coverage data."""
