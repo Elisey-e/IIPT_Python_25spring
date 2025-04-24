@@ -15,3 +15,8 @@ IIPT_Python_25spring
 .nox
 .pytype
 .mypy_cache
+
+.safety-project.ini
+coverage.xml
+profile.prof
+poetry.lock
