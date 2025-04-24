@@ -9,7 +9,7 @@ from nox_poetry.sessions import Session
 
 package = "imgvisint"
 # nox.options.sessions = "formatter", "linter", "mypy", "pytype", "tests"
-locations = "tests", "noxfile.py", "models"
+locations = "tests", "noxfile.py", "models", "src"
 
 
 @nox_poetry.session(python="3.11")
