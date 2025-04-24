@@ -87,15 +87,6 @@ def bicubic_interpolation(
        - Для пакетной обработки рассмотрите GPU-ускорение через torch.nn.functional.interpolate
     """
     # Валидация входных данных
-    if values.ndim != 3:
-        raise ValueError("Input values must be 3-dimensional array (H, W, C)")
-
-    if not (np.all(np.diff(x) > 0) and np.all(np.diff(y) > 0)):
-        raise ValueError("Original coordinates must be strictly increasing")
-
-    if (np.min(xi) < np.min(x)) or (np.max(xi) > np.max(x)) or (np.min(yi) < np.min(y)) or (np.max(yi) > np.max(y)):
-        raise ValueError("Target coordinates must be within original range")
-
     channels = []
     for i in range(values.shape[2]):
         # Создание бикубического интерполятора для канала
