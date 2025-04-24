@@ -7,6 +7,7 @@ extensions = [
     'sphinx_click',
     'matplotlib.sphinxext.plot_directive'
 ]
+project = 'Image Interpolation Visualisation'
 
 html_theme = 'furo'
 html_logo = "source/_static/m31.png"

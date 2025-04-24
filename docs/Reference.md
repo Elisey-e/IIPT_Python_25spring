@@ -1,23 +1,22 @@
 # Reference
 
-## imgvisint.bininear
+## imgvisint.bilinear
 
 ```
-.. automodule:: imgvisint.bicubic_interpolation
+.. automodule:: models.bilinear
    :members:
 ```
-
 
 ## imgvisint.bicubic
 
 ```
-.. automodule:: imgvisint.bilinear_interpolation
+.. automodule:: models.bicubic
    :members:
 ```
 
-## imgvisint.ersgan
+## imgvisint.esrgan
 
 ```
-.. automodule:: imgvisint.neural_network_upscale
+.. automodule:: models.esrgan
    :members:
-``` 
+```

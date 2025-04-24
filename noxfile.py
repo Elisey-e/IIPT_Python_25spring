@@ -106,17 +106,7 @@ def coverage(session: Session) -> None:
     session.run("codecov", *session.posargs)
 
 
-# @nox_poetry.session(python="3.11")
-# def docs(session: Session) -> None:
-#     """Build the documentation."""
-#     session.run("poetry", "install", external=True)
-#     # session.run("poetry", "install", "--only=main", external=True)
-#     session.install(
-#         "sphinx",
-#         "myst-parser",
-#         "sphinx-autodoc2",
-#         "sphinx-click",
-#         "furo",
-#         "matplotlib",
-#     )
-#     session.run("sphinx-build", "docs", "docs/_build")
+@nox_poetry.session(python="3.11")
+def docs(session: Session) -> None:
+    """Build the documentation."""
+    session.run("sphinx-build", "-b", "html", "docs", "docs/_build/html")
