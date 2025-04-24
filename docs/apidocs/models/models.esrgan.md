@@ -59,7 +59,7 @@
 
 ````
 
-````{py:function} neural_network_upscale(image: PIL.Image) -> numpy.ndarray
+````{py:function} neural_network_upscale(image: PIL.Image.Image) -> numpy.ndarray
 :canonical: models.esrgan.neural_network_upscale
 
 ```{autodoc2-docstring} models.esrgan.neural_network_upscale

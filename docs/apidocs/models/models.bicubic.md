@@ -23,7 +23,7 @@
 
 ### API
 
-````{py:function} bicubic_interpolation(x: list, y: list, values: list, xi: list, yi: list) -> numpy.stack
+````{py:function} bicubic_interpolation(x: list | numpy.ndarray, y: list | numpy.ndarray, values: numpy.ndarray, xi: list | numpy.ndarray, yi: list | numpy.ndarray) -> numpy.ndarray
 :canonical: models.bicubic.bicubic_interpolation
 
 ```{autodoc2-docstring} models.bicubic.bicubic_interpolation

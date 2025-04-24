@@ -23,7 +23,7 @@
 
 ### API
 
-````{py:function} bilinear_interpolation(x: list, y: list, values: list, xi: list, yi: list) -> numpy.stack
+````{py:function} bilinear_interpolation(x: list, y: list, values: numpy.ndarray, xi: list, yi: list) -> numpy.ndarray
 :canonical: models.bilinear.bilinear_interpolation
 
 ```{autodoc2-docstring} models.bilinear.bilinear_interpolation
