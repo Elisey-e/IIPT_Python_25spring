@@ -62,13 +62,13 @@ def linter(session: Session) -> None:
 #         session.run("safety", "scan", f"--file={reqs.name}", "--full-report")
 
 
-"""Working"""
-# @nox_poetry.session(python="3.11")
-# def pytype(session: Session) -> None:
-#     """Type-check using pytype."""
-#     args = session.posargs or ["--disable=import-error", *locations]
-#     session.install("pytype")
-#     session.run("pytype", *args)
+
+@nox_poetry.session(python="3.11")
+def pytype(session: Session) -> None:
+    """Type-check using pytype."""
+    args = session.posargs or ["--disable=import-error", *locations]
+    session.install("pytype")
+    session.run("pytype", *args)
 
 
 # @nox_poetry.session(python=["3.11"])
@@ -98,12 +98,12 @@ def linter(session: Session) -> None:
 #     session.run("python", "-m", "xdoctest", package, *args)
 
 
-@nox_poetry.session(python="3.11")
-def coverage(session: Session) -> None:
-    """Upload coverage data."""
-    session.install("coverage[toml]", "codecov")
-    session.run("coverage", "xml", "--fail-under=0")
-    session.run("codecov", *session.posargs)
+# @nox_poetry.session(python="3.11")
+# def coverage(session: Session) -> None:
+#     """Upload coverage data."""
+#     session.install("coverage[toml]", "codecov")
+#     session.run("coverage", "xml", "--fail-under=0")
+#     session.run("codecov", *session.posargs)
 
 
 @nox_poetry.session(python="3.11")
