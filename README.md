@@ -8,9 +8,14 @@
 
 ## Установка и запуск
 
+Конфигурационные файлы в папке configs, используйте их в корне проекта
+
 ### Windows
 
 ```bash
+git clone https://github.com/Elisey-e/IIPT_Python_25spring.git
+cd IIPT_Python_25spring
+git clone https://github.com/ai-forever/Real-ESRGAN.git
 poetry install
 run.bat
 ```
@@ -18,6 +23,9 @@ run.bat
 ### Linux
 
 ```bash
+git clone https://github.com/Elisey-e/IIPT_Python_25spring.git
+cd IIPT_Python_25spring
+git clone https://github.com/ai-forever/Real-ESRGAN.git
 poetry install
 bash run.sh
 ```
