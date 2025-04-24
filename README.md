@@ -26,13 +26,12 @@ bash run.sh
 
 ![Пример вывода](https://sun9-42.userapi.com/impg/V4C16fI6WiLlIUe_f4NeBox44qA_70mNi9rceg/YlIBnjFEMUI.jpg?size=1400x700&quality=95&sign=fd6cb478dadda401087057ae503eebaf&type=album)
 
-## Проверка кода
-
-Для проверки кода с использованием `ruff` выполните:
+## Запуск nox сессии
 
 ```bash
-poetry run ruff check --fix
+nox
 ```
+
 
 ## Модели
 
