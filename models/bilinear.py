@@ -14,13 +14,7 @@ import numpy as np
 import scipy.interpolate as interp
 
 
-def bilinear_interpolation(
-    x: list, 
-    y: list, 
-    values: np.ndarray, 
-    xi: list, 
-    yi: list
-) -> np.ndarray:
+def bilinear_interpolation(x: list, y: list, values: np.ndarray, xi: list, yi: list) -> np.ndarray:
     """
     Выполняет билинейную интерполяцию цветного изображения на новой сетке координат.
 
@@ -78,6 +72,6 @@ def bilinear_interpolation(
         f = interp.interp2d(x, y, values[:, :, i], kind="linear")
         # Выполняем интерполяцию на новой сетке
         channels.append(f(xi, yi))
-    
+
     # Объединяем каналы и нормализуем значения
     return np.stack(channels, axis=-1) / 256

@@ -58,6 +58,6 @@ def neural_network_upscale(image: Image.Image) -> np.ndarray:
     """
     # Выполнение предсказания (апскейла изображения)
     sr_image = model.predict(image)
-    
+
     # Конвертация результата в массив NumPy и возврат
     return np.array(sr_image)

@@ -15,11 +15,7 @@ import scipy.interpolate as interp
 
 
 def bicubic_interpolation(
-    x: list | np.ndarray, 
-    y: list | np.ndarray, 
-    values: np.ndarray, 
-    xi: list | np.ndarray, 
-    yi: list | np.ndarray
+    x: list | np.ndarray, y: list | np.ndarray, values: np.ndarray, xi: list | np.ndarray, yi: list | np.ndarray
 ) -> np.ndarray:
     """
     Выполняет бикубическую интерполяцию цветного изображения на новой сетке координат.
@@ -63,11 +59,11 @@ def bicubic_interpolation(
     >>> x_orig = np.array([0, 1, 2])
     >>> y_orig = np.array([0, 1, 2])
     >>> img = np.random.randint(0, 256, (3, 3, 3), dtype=np.uint8)
-    >>> 
+    >>>
     >>> # Новая сетка 5x5
     >>> x_new = np.linspace(0, 2, 5)
     >>> y_new = np.linspace(0, 2, 5)
-    >>> 
+    >>>
     >>> # Применение бикубической интерполяции
     >>> result = bicubic_interpolation(x_orig, y_orig, img, x_new, y_new)
     >>> print(f"Result shape: {result.shape}, dtype: {result.dtype}")
@@ -79,12 +75,12 @@ def bicubic_interpolation(
        - Дает более гладкие результаты по сравнению с билинейной
        - Сохраняет тонкие детали лучше, чем билинейная
        - Вычислительно более сложная (примерно в 2-3 раза медленнее билинейной)
-    
+
     2. Ограничения:
        - Требует равномерной или логарифмически равномерной сетки
        - Может создавать артефакты перерегуляризации на резких границах
        - Не подходит для очень больших изображений (>2048px) из-за памяти
-    
+
     3. Рекомендации:
        - Для медицинских изображений используйте параметр kind='quintic'
        - Для HDR-изображений предварительно преобразуйте в логарифмическое пространство
@@ -93,21 +89,20 @@ def bicubic_interpolation(
     # Валидация входных данных
     if values.ndim != 3:
         raise ValueError("Input values must be 3-dimensional array (H, W, C)")
-    
+
     if not (np.all(np.diff(x) > 0) and np.all(np.diff(y) > 0)):
         raise ValueError("Original coordinates must be strictly increasing")
-    
-    if (np.min(xi) < np.min(x)) or (np.max(xi) > np.max(x)) or \
-       (np.min(yi) < np.min(y)) or (np.max(yi) > np.max(y)):
+
+    if (np.min(xi) < np.min(x)) or (np.max(xi) > np.max(x)) or (np.min(yi) < np.min(y)) or (np.max(yi) > np.max(y)):
         raise ValueError("Target coordinates must be within original range")
 
     channels = []
     for i in range(values.shape[2]):
         # Создание бикубического интерполятора для канала
         f = interp.interp2d(x, y, values[:, :, i], kind="cubic")
-        
+
         # Интерполяция на новой сетке (автоматическая обработка границ)
         channels.append(f(xi, yi))
-    
+
     # Комбинирование каналов и нормализация
     return np.stack(channels, axis=-1) / 256.0
